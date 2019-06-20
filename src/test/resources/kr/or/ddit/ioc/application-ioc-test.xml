@@ -12,8 +12,25 @@
 	<!-- IBoardService boardService = new BoardServiceImpl(); -->
 	<bean id="boardService" class="kr.or.ddit.board.service.BoardServiceImpl">
 		<!-- boardService의 filed, property (변수) -->
+		<!-- setter injection방식 -->
 		<!-- ref(참조값,즉 객체) value(변수값,즉 데이터) -->
 		<property name="boardDao" ref="boardDao"></property>
+	</bean>
+	
+	<!-- 
+		prototype scope boardDao 
+		prototype scope : 요청시마다 새로운 객체를 만들어서 준다
+	-->
+	<bean id="boardDaoPrototype" class="kr.or.ddit.board.dao.BoardDaoImpl" scope="prototype"/>
+
+	<bean id="boardServiceConstructor" class="kr.or.ddit.board.service.BoardServiceImpl">
+		<!-- Constructor injection -->
+		<!-- 
+			생성자 주입시 매개변수가 있는 생성자를 기술하는데, 
+			해당 클래스에 기본생성자가 없을 경우 오류가 난다 
+			그래서 기본생성자를 같이 기술해줘야 한다.
+		-->
+		<constructor-arg ref="boardDao"/>
 	</bean>
 	
 </beans>
