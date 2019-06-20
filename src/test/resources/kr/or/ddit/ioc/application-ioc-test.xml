@@ -15,6 +15,7 @@
 		<!-- setter injection방식 -->
 		<!-- ref(참조값,즉 객체) value(변수값,즉 데이터) -->
 		<property name="boardDao" ref="boardDao"></property>
+		<property name="name" value="brown"></property>
 	</bean>
 	
 	<!-- 

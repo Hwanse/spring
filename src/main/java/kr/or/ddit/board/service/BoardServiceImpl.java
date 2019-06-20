@@ -6,7 +6,7 @@ public class BoardServiceImpl implements IBoardService{
 	
 	// property or field
 	private IBoardDao boardDao;
-
+	private String name;
 	
 	public BoardServiceImpl(IBoardDao boardDao) {
 		this.boardDao = boardDao;
@@ -27,6 +27,14 @@ public class BoardServiceImpl implements IBoardService{
 
 	public void setBoardDao(IBoardDao boardDao) {
 		this.boardDao = boardDao;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	
