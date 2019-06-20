@@ -36,6 +36,7 @@ public class SpringIocTest {
 	// 1. boardDao boardDaoPrototype : spring bean id가 다르므르로 다른객체
 	// 2. boardDaoPrototype, boardPrototype2 : 두 객체는 같은 스프링 bean이지만
 	//										 : scope가 prototype이므로 다른 객체이어야한다
+	
 	@Resource(name="boardDao")
 	private IBoardDao boardDao;
 	
