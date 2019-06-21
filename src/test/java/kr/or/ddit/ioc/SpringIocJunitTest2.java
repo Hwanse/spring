@@ -30,7 +30,6 @@ public class SpringIocJunitTest2 {
 		/***Then***/
 		assertNotNull(boardService);
 		assertEquals("boardDao sayHello", msg);
-		
 	}
 
 }
