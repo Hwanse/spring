@@ -14,6 +14,6 @@
 		<constructor-arg value="${jdbc.password}"/>
 	</bean>
 	
-	<bean id="boardDao" class="kr.or.ddit.board.dao.BoardDaoImpl"/>
+	<bean id="boardDao" class="kr.or.ddit.board.dao.BoardDao"/>
 	
 </beans>

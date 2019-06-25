@@ -5,7 +5,7 @@ from    not_exists_in_prd_db;
 delete users;
 
 Insert into PC14_TEST.USERS (USERID,NAME,ALIAS,PASS,ADDR1,ADDR2,ZIPCD,BIRTH,PATH,FILENAME) values ('userTest','황선홍','중앙','1234','대전광역시 동구 홍도동','한남대학교','3412',to_date('19/05/31','RR/MM/DD'),null,null);
-Insert into PC14_TEST.USERS (USERID,NAME,ALIAS,PASS,ADDR1,ADDR2,ZIPCD,BIRTH,PATH,FILENAME) values ('brown','브라운테스트','브라운','c6347b73d5b1f7c77f8be828ee3e871c819578f23779c7d5e082ae2b36a44','대전 중구 중앙로 지하 71','대덕인재개발원','34866',to_date('00/08/08','RR/MM/DD'),'d:\upload\2019\06\0332ebdb-97db-4a3b-be8c-bff310ed93d3.png','brown.png');
+Insert into PC14_TEST.USERS (USERID,NAME,ALIAS,PASS,ADDR1,ADDR2,ZIPCD,BIRTH,PATH,FILENAME) values ('brown','브라운','곰','c6347b73d5b1f7c77f8be828ee3e871c819578f23779c7d5e082ae2b36a44','대전 중구 중앙로 지하 71','대덕인재개발원','34866',to_date('00/08/08','RR/MM/DD'),'d:\upload\2019\06\0332ebdb-97db-4a3b-be8c-bff310ed93d3.png','brown.png');
 Insert into PC14_TEST.USERS (USERID,NAME,ALIAS,PASS,ADDR1,ADDR2,ZIPCD,BIRTH,PATH,FILENAME) values ('cony','코니','토끼','de1153428acef7fd7b999f1227d4882146bd7ea16b595b43bf5090d41d3637',null,null,null,null,'d:\upload\cony.png','cony.png');
 Insert into PC14_TEST.USERS (USERID,NAME,ALIAS,PASS,ADDR1,ADDR2,ZIPCD,BIRTH,PATH,FILENAME) values ('sally','샐리','병아리','4aeaaaccd26ed685e4e3c563bcdb1f9d1dabd77f1b7b819625679936648d49c9',null,null,null,null,'d:\upload\sally.png','sally.png');
 Insert into PC14_TEST.USERS (USERID,NAME,ALIAS,PASS,ADDR1,ADDR2,ZIPCD,BIRTH,PATH,FILENAME) values ('moon','문','달','7a37a8623ff85b19476f7d052349e1d57e5bded313cccdea99b9601e1ace5d','대전 중구 중앙로 지하 71','교보생명','34866',to_date('19/06/19','RR/MM/DD'),'d:\upload\moon.png','moon.png');

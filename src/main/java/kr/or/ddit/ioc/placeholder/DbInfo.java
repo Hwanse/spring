@@ -6,7 +6,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-import kr.or.ddit.board.dao.BoardDaoImpl;
+import kr.or.ddit.board.dao.BoardDao;
 import kr.or.ddit.board.dao.IBoardDao;
 
 public class DbInfo implements ApplicationContextAware{
@@ -42,7 +42,7 @@ public class DbInfo implements ApplicationContextAware{
 
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-		IBoardDao boardDao = applicationContext.getBean("boardDao", BoardDaoImpl.class);
+		IBoardDao boardDao = applicationContext.getBean("boardDao", BoardDao.class);
 		String msg = boardDao.sayHello();
 		logger.debug("msg : {}", msg);
 	}

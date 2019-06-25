@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.or.ddit.board.dao.IBoardDao;
 import kr.or.ddit.board.service.IBoardService;
+import kr.or.ddit.testenv.LogicTestEnv;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {ApplicationIocConfig.class})

@@ -9,10 +9,15 @@
 
 	
 	<!-- @Controller, @Service, @Repository, @Conponent 4가지 어노테이션이 붙은 클래스를 스프링 bean으로 등록 -->	
-	<context:component-scan base-package="kr.or.ddit">
+	<!-- <context:component-scan base-package="kr.or.ddit.board" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/>
-	</context:component-scan>
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan> -->
 
+	<bean id="boardService" class="kr.or.ddit.board.service.BoardServiceImpl"/>
+	<bean id="boardDao" class="kr.or.ddit.board.dao.BoardDao"/>
+	<bean id="ProfilingAspect" class="kr.or.ddit.aop.ProfilingAspect"/>
+	
 	<aop:aspectj-autoproxy/>
 	
 	<!-- scan방식을 사용할 땐 없어도 되지만 scan이 아니라 bean들을 직접 명시할땐 필요하다 -->
