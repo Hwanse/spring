@@ -3,6 +3,8 @@ package kr.or.ddit.main.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -11,9 +13,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.or.ddit.main.model.MainVO;
 import kr.or.ddit.user.model.UserVO;
 
 /*
@@ -142,6 +146,57 @@ public class MainController {
 	@RequestMapping("/main/header")
 	public String header(@RequestHeader(name = "Accept"/* , required = false */)String accept) {
 		logger.debug("Accept:{}",accept);
+		return "main";
+	}
+	
+	
+	@RequestMapping("/main/view")
+	public String view() {
+		
+		return "view";
+	}
+	
+	
+	// List<>타입의 경우 @RequestParam을 적용해야한다.
+	@RequestMapping("/main/process")
+	public String process(HttpServletRequest request, String[] userId, 
+						@RequestParam("userId")List<String> userIdList,
+						String[] name, /* @RequestParam("name")List<String> name, */
+						MainVO mainVO ) {
+		
+		String[] userIdArr = request.getParameterValues("userId");
+		
+		// 1.기존의 Servlet에서 같은 name끼리의 복수 파라미터를 받아오는 법
+		logger.debug("request.getParameterValues(\"userId\")");
+		for(String u : userIdArr) {
+			logger.debug("uesrId : {}", u);
+		}
+
+		logger.debug("String[] userId");
+		// 2.spring에서 받아오는 방법: 위 adapter method에 String[]타입의 변수로 받음)
+		for(String u : userId) {
+			logger.debug("uesrId : {}", u);
+		}
+		
+		logger.debug("List<String> userIdList");
+		// 3.List로 받기
+		for(String u : userIdList) {
+			logger.debug("userId: {} ", u);
+		}
+		
+		logger.debug("mainVO");
+		for(String u : mainVO.getUserId()) {
+			logger.debug("userId : {}", u);
+		}
+		
+//		logger.debug("List<String> name");
+		logger.debug("String[] name");
+		for(String u: name) {
+			logger.debug("name : {}", u);
+		}
+		
+		logger.debug("mainVO : {}", mainVO);
+		
 		return "main";
 	}
 	
