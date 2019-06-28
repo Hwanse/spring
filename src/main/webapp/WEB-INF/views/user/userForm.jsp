@@ -10,6 +10,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,7 +85,7 @@
 	
 		
 		//개발용 데이터 초기화 함수 ***** 추후 지울것
-// 		dataInit();
+		dataInit();
 		
 	});
 	
@@ -141,7 +142,7 @@
 						<h2 class="sub-header">사용자 등록</h2>
 
 						<form id="frm" class="form-horizontal" role="form"
-							  action="${cp }/userForm"
+							  action="${cp }/user/form"
 							  method="post" enctype="multipart/form-data">
 
 							<div class="form-group">
@@ -153,13 +154,14 @@
 
 							<div class="form-group">
 								<label for="userId" class="col-sm-2 control-label">사용자아이디</label>
-								<div class="col-sm-8">
+								<div class="col-sm-10">
 									<input type="text" class="form-control" id="userId"
 										name="userId" placeholder="사용자 아이디" value="${param.userId }">
+									<form:errors path="userVO.userId"/>
 								</div>
-								<div class="col-sm-2">
-									<button id="idCheckBtn" class="btn btn-default pull-right" type="button">중복체크</button>
-								</div>
+<!-- 								<div class="col-sm-2"> -->
+<!-- 									<button id="idCheckBtn" class="btn btn-default pull-right" type="button">중복체크</button> -->
+<!-- 								</div>  -->
 								<input id="msg" type="hidden" value="${msg }" />								
 							</div>
 
@@ -169,6 +171,7 @@
 									<input type="text" class="form-control" id="name"
 										name="name" placeholder="사용자 이름" value="${param.name }">
 								</div>
+								<form:errors path="userVO.name"/>
 							</div>
 							
 							<div class="form-group">

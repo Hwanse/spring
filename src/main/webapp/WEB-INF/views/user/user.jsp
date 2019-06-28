@@ -27,6 +27,11 @@
 <script>
 	$(document).ready(function(){
 		
+		<c:if test="${not empty msg}">
+			alert("${msg}");
+		</c:if>
+		
+		
 		$("#modBtn").on("click", function(){
 			
 			$("#frm").submit();
@@ -59,7 +64,7 @@
 						<h2 class="sub-header">사용자상세</h2>
 
 						<form id="frm" class="form-horizontal" role="form"
-							  action="${cp }/userModify"
+							  action="${cp }/user/modify"
 							  method="get">
 
 							<c:set var="vo" value="${SELECT_USER_INFO }" scope="session"/>
@@ -67,7 +72,7 @@
 							<div class="form-group">
 								<label for="userNm" class="col-sm-2 control-label">사용자 사진</label>
 								<div class="col-sm-10">
-									<img id="proImg" src="${cp }/profile?userId=${vo.userId }"/>
+									<img id="proImg" src="${cp }/user/profile?userId=${vo.userId }"/>
 								</div>
 							</div>
 
@@ -75,8 +80,7 @@
 								<label for="userNm" class="col-sm-2 control-label">사용자아이디</label>
 								<div class="col-sm-10">
 									<label class="control-label">${vo.userId }</label>
-									<!-- <input type="text" class="form-control" id="userId"
-										name="userId" placeholder="사용자 아이디"> -->
+									<input type="hidden" id="userId" name="userId" placeholder="사용자 아이디"> 
 								</div>
 							</div>
 
@@ -119,7 +123,11 @@
 								<label for="userNm" class="col-sm-2 control-label">생일</label>
 								<div class="col-sm-10">
 <%-- 									<label class="control-label">${vo.birth }</label> --%>
-									<label class="control-label"><fmt:formatDate value="${vo.birth }" pattern="yyyy-MM-dd"/></label>
+									<label class="control-label">
+										<c:if test="${vo.birth ne null}">
+											<fmt:formatDate value="${vo.birth }" pattern="yyyy-MM-dd"/>
+										</c:if>
+									</label>
 								</div>
 							</div>
 

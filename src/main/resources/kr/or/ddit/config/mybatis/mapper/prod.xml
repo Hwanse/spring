@@ -11,4 +11,34 @@
 		WHERE	PROD_LGU = #{prod_lgu}	
 	</select>
 
+	<select	id="getAllProdList" resultType="prodVO">
+		SELECT	*
+		FROM	PROD
+		ORDER BY PROD_ID ASC
+	</select>
+	
+	
+	<select id="prodPagingList" parameterType="pageVO" resultType="prodVO">
+		<![CDATA[
+			SELECT	*
+			FROM
+				(
+				SELECT	P.*, ROWNUM RN
+				FROM	
+					(
+					SELECT	P.*
+					FROM	PROD P
+					ORDER BY PROD_ID ASC
+					)P
+				)
+			WHERE	RN >= (#{page} -1) * #{pageSize} + 1
+			AND		RN <= #{page} * #{pageSize} 
+		]]>
+	</select>
+	
+	
+	<select	id="prodCnt" resultType="int">
+		SELECT	COUNT(*)
+		FROM	PROD;
+	</select>
 </mapper>

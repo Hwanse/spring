@@ -10,7 +10,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,9 +61,9 @@
 			if(isEmpty("#alias", "별명을 입력해주세요.")){
 				return;
 			}
-			if(isEmpty("#pass", "비밀번호를 입력해주세요", 1)){
-				return;
-			}
+// 			if(isEmpty("#pass", "비밀번호를 입력해주세요", 1)){
+// 				return;
+// 			}
 			//여기까지 도달하면 유효성 검사완료(submit)
 			$("#frm").submit();
 		});
@@ -94,7 +94,7 @@
 		$("#addr2").val("빌딩");		
 		$("#zipcd").val("14125");		
 		$("#birth").val("2019-05-31");		
-		$("#pass").val("userTest1234");		
+// 		$("#pass").val("userTest1234");		
 	}
 	
 </script>
@@ -122,7 +122,7 @@
 						<h2 class="sub-header">사용자 수정</h2>
 
 						<form id="frm" class="form-horizontal" role="form"
-							  action="${cp }/userModify"
+							  action="${cp }/user/modify"
 							  method="post" enctype="multipart/form-data">
 
 							<div class="form-group">
@@ -189,18 +189,21 @@
 							<div class="form-group">
 								<label for="birth" class="col-sm-2 control-label">생일</label>
 								<div class="col-sm-10">
+									<%-- <c:set target="birth" value="${vo.birth }">
+										<fmt:formatDate value="${vo.birth }" pattern="yyyy-MM-dd"/>
+									</c:set> --%>
 									<input type="date" class="form-control" id="birth"
-										name="birth" placeholder="생일" value="${birth}">
+										name="birth" placeholder="생일" value="<fmt:formatDate value="${vo.birth }" pattern="yyyy-MM-dd"/>">
 								</div>
 							</div>
 
-							<div class="form-group">
+							<%-- <div class="form-group">
 								<label for="pass" class="col-sm-2 control-label">비밀번호</label>
 								<div class="col-sm-10">
 									<input type="password" class="form-control" id="pass"
 										name="pass" placeholder="비밀번호" value="${vo.pass }">
 								</div>
-							</div>
+							</div> --%>
 
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10">

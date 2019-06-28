@@ -73,7 +73,7 @@
 						<h2 class="sub-header">사용자</h2>
 						
 						<!-- 사용자 상세조회 : userId가 필요 -->
-						<form id="frm" action="${cp }/user"
+						<form id="frm" action="${cp }/user/user"
 							  method="get">
 							  <input type="hidden" id="userId" name="userId"/>
 						</form>
@@ -103,8 +103,10 @@
 							</table>
 						</div>
 
-						<a href="${cp }/userForm" class="btn btn-default pull-right">사용자 등록</a>
-
+						<a href="${cp }/user/form" class="btn btn-default pull-right">사용자 등록</a>
+						<br><br>
+						<a href="${cp }/user/userListExcel?filename=userList" class="btn btn-default pull-right">엑셀다운</a>
+						
 						<div class="text-center">
 							<ul class="pagination" >
 								 <%
@@ -165,7 +167,7 @@
 									</c:when>
 									<c:otherwise>
 										<li class="previous">											
-											<a href="${cp}/userPagingList?page=${pageVO.page-1 }&pageSize=${pageVO.pageSize}">«</a>
+											<a href="${cp}/user/pagingList?page=${pageVO.page-1 }&pageSize=${pageVO.pageSize}">«</a>
 										</li>
 									</c:otherwise>
 								</c:choose>								 
@@ -180,7 +182,7 @@
 											</li>
 										</c:when>
 										<c:otherwise>															
-											<li><a href="${cp}/userPagingList?page=${i }&pageSize=${pageVO.pageSize}">${i }</a></li>
+											<li><a href="${cp}/user/pagingList?page=${i }&pageSize=${pageVO.pageSize}">${i }</a></li>
 										</c:otherwise>
 									</c:choose>
 								</c:forEach>
@@ -193,12 +195,18 @@
 								 	</c:when>
 								 	<c:otherwise>
 								 		<li class="next">													
-								 			<a href="${cp}/userPagingList?page=${pageVO.page + 1 }&pageSize=${pageVO.pageSize}">»</a>
+								 			<a href="${cp}/user/pagingList?page=${pageVO.page + 1 }&pageSize=${pageVO.pageSize}">»</a>
 								 		</li>
 								 	</c:otherwise>
 								 </c:choose>		
 								 
 							</ul>
+							
+							<!-- intercept에서 넘어온 데이터 -->
+							<%-- <c:forEach items="${userList }" var="user">
+								${user }<br>
+							</c:forEach> --%>
+							
 						</div>
 					</div>
 				</div>

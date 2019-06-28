@@ -3,16 +3,25 @@ package kr.or.ddit.user.model;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class UserVO {
 
 	private String name;
+	
+	@Size(min = 4)
 	private String userId;
 	private String alias;
 	private String pass;
 	private String addr1;
 	private String addr2;
 	private String zipcd;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date birth;
+	
 	private String path;
 	private String filename;
 	
@@ -98,7 +107,9 @@ public class UserVO {
 	}
 	public String getBirthStr(){
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		return sdf.format(this.birth);
+		String birth = this.birth == null ? "정보 없음" :  sdf.format(this.birth);
+		
+		return birth;
 	}
 	
 	public void setBirth(Date birth) {

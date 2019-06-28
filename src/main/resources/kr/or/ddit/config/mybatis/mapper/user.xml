@@ -62,9 +62,10 @@
 	         SELECT  A.*
 	         FROM    USERS A
 	         ORDER BY USERID
-	         ) A) 
-	     WHERE  RN >= ( #{page} - 1) * #{pageSize} + 1 
-	     AND RN <= #{page} * #{pageSize}
+	       	) A
+	    ) 
+     WHERE  RN >= ( #{page} - 1) * #{pageSize} + 1 
+     AND RN <= #{page} * #{pageSize}
   	]]>
   </select> 
   
@@ -89,10 +90,11 @@
   		   ,ADDR1 = #{addr1}
   		   ,ADDR2 = #{addr2}
   		   ,ZIPCD = #{zipcd}
-  		   ,BIRTH = #{birth}
-  		   ,PASS = #{pass}
-  		   ,PATH = #{path, jdbcType=VARCHAR}
-  		   ,FILENAME = #{filename, jdbcType=VARCHAR}
+  		   ,BIRTH = #{birth, jdbcType=DATE}
+  		   <if test="path != null">
+	  		   ,PATH = #{path, jdbcType=VARCHAR}
+	  		   ,FILENAME = #{filename, jdbcType=VARCHAR}
+  		   </if>
   	WHERE	USERID = #{userId}
   </update>
 
