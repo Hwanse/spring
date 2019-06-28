@@ -71,7 +71,7 @@ public class UserControllerTest extends ControllerTestEnv{
 		int paginationSize = (int) mav.getModel().get("paginationSize");
 		
 		/***Then***/
-		assertEquals("user/userPagingList", viewName);
+		assertEquals("tiles.userPagingList", viewName);
 		assertEquals(2, pageVO.getPage());
 		assertEquals(10, pageVO.getPageSize());
 		assertEquals(10, userList.size());
@@ -105,7 +105,7 @@ public class UserControllerTest extends ControllerTestEnv{
 		int paginationSize = (int) mav.getModel().get("paginationSize");
 		
 		/***Then***/
-		assertEquals("user/userPagingList", viewName);
+		assertEquals("tiles.userPagingList", viewName);
 		assertEquals(10, userList.size());
 		assertEquals(new PageVO(1, 10), pageVO);
 		assertEquals(11, paginationSize);
@@ -349,7 +349,7 @@ public class UserControllerTest extends ControllerTestEnv{
 		
 
 		/***Then***/
-		assertEquals("redirect:/user/user?userId=userTest2", viewName);
+		assertEquals("redirect:/user/user", viewName);
 		
 	}
 	

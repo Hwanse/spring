@@ -14,5 +14,8 @@
 			href="${cp}/lprod/list">Lprod리스트</a></li>
 		<li class="active"><a
 			href="${cp}/lprod/pagingList">Lprod페이징 리스트</a></li>
+
+		<li class="active"><a
+			href="${cp}/lprod/pagingListAjaxView">Lprod페이징 리스트(ajax)</a></li>
 	</ul>
 </div>

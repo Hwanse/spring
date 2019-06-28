@@ -135,7 +135,7 @@ public class UserDaoTest extends LogicTestEnv{
 		
 		int usersCnt = userDao.usersCnt();
 		
-		assertEquals(110, usersCnt);
+		assertEquals(109, usersCnt);
 		
 	}
 	

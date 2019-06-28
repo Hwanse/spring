@@ -89,7 +89,7 @@ public class MainController {
 		model.addAttribute("mainUserId","brown");
 		
 		// viewName
-		return "main";
+		return "tiles.main";
 	}
 	
 	/**
