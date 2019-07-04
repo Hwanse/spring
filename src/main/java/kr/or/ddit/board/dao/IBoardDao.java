@@ -3,5 +3,4 @@ package kr.or.ddit.board.dao;
 public interface IBoardDao {
 	
 	String sayHello();
-	
 }

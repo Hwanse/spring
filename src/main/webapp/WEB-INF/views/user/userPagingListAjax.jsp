@@ -35,8 +35,8 @@
 	
 		
 		// 첫번째 페이지의 사용자 정보를 요청
-// 		userPagingListAjax(1,10);
-		userPagingListAjaxHtml(1,10);
+		userPagingListAjax(1,10);
+// 		userPagingListAjaxHtml(1,10);
 		
 		
 	});

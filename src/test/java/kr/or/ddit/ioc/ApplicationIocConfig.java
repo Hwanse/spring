@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 import kr.or.ddit.board.dao.BoardDao;
 import kr.or.ddit.board.dao.IBoardDao;
-import kr.or.ddit.board.service.BoardServiceImpl;
+import kr.or.ddit.board.service.BoardService;
 
 @Configuration
 public class ApplicationIocConfig {
@@ -25,8 +25,8 @@ public class ApplicationIocConfig {
 	 */
 	
 	@Bean
-	public BoardServiceImpl boardService() {
-		BoardServiceImpl boardService = new BoardServiceImpl();
+	public BoardService boardService() {
+		BoardService boardService = new BoardService();
 		boardService.setName("brown");
 		boardService.setBoardDao(boardDao());
 		return boardService;

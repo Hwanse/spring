@@ -64,6 +64,7 @@ public class FileControllerTest extends ControllerTestEnv{
 		
 		/***When***/
 		MvcResult mvcResult = mockMvc.perform( fileUpload("/file/upload")
+										.file(mockMultipartFile)
 										.file(mockMultipartFile) )
 										.andReturn();
 		ModelAndView mav = mvcResult.getModelAndView();

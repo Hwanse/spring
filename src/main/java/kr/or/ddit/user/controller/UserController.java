@@ -122,7 +122,7 @@ public class UserController {
 	*/
 	@RequestMapping("/pagingListAjax")
 	public String userPagingListAjax(PageVO pageVO, Model model) {
-		
+		logger.debug("pageVO : {}", pageVO);
 		model.addAttribute("data", userService.userPagingList(pageVO));
 		
 		return "jsonView";

@@ -29,6 +29,7 @@
 			</configuration>
   		</plugin>
   		
+  		<!-- web배포시 junit테스트의 Encoding설정 -->
      	<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-surefire-plugin</artifactId>
@@ -209,6 +210,7 @@
 	    <version>1.4</version>
 	</dependency>
 		
+	<!-- 메세지 다국어 처리 -->
 	<!-- JSR303 -->
 	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
 	<dependency>

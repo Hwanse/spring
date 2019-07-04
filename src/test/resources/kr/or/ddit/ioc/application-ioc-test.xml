@@ -10,7 +10,7 @@
 	<!-- IBoardDao boarDao = new BoardDaoImpl(); -->
 	<bean id="boardDao" class="kr.or.ddit.board.dao.BoardDao"/>
 	<!-- IBoardService boardService = new BoardServiceImpl(); -->
-	<bean id="boardService" class="kr.or.ddit.board.service.BoardServiceImpl">
+	<bean id="boardService" class="kr.or.ddit.board.service.BoardService">
 		<!-- boardService의 filed, property (변수) -->
 		<!-- setter injection방식 -->
 		<!-- ref(참조값,즉 객체) value(변수값,즉 데이터) -->
@@ -24,7 +24,7 @@
 	-->
 	<bean id="boardDaoPrototype" class="kr.or.ddit.board.dao.BoardDao" scope="prototype"/>
 
-	<bean id="boardServiceConstructor" class="kr.or.ddit.board.service.BoardServiceImpl">
+	<bean id="boardServiceConstructor" class="kr.or.ddit.board.service.BoardService">
 		<!-- Constructor injection -->
 		<!-- 
 			생성자 주입시 매개변수가 있는 생성자를 기술하는데, 
