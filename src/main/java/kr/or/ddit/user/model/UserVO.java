@@ -4,9 +4,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+// xml형식으로 변환
+@XmlRootElement(name = "userVO")
 public class UserVO {
 
 	private String name;
