@@ -69,15 +69,18 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>springDispatcherServlet</servlet-name>
-		<url-pattern>/</url-pattern>	<!-- default Servlet -->
-	</servlet-mapping>
 	<!-- Map all requests to the DispatcherServlet for handling -->
 	<!-- 보통 Rest API를 사용할 때 아래와같이 처리함 -->
 <!-- 	<servlet-mapping> -->
 <!-- 		<servlet-name>springDispatcherServlet2</servlet-name> -->
 <!-- 		<url-pattern>*.do</url-pattern>	default Servlet -->
 <!-- 	</servlet-mapping> -->
+
+	<servlet-mapping>
+		<servlet-name>springDispatcherServlet</servlet-name>
+		<url-pattern>/</url-pattern>	<!-- default Servlet -->
+	</servlet-mapping>
+	
+	<!-- 브랜치(branch) 확인용 커밋 -->
+	
 </web-app>
