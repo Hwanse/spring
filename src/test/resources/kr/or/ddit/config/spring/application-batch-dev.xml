@@ -38,7 +38,7 @@
 
 
 
-	<batch:job id="yogultJob">
+	<batch:job id="yogultJob" restartable="true">
 		<batch:step id="step1" allow-start-if-complete="true">
 			<batch:tasklet allow-start-if-complete="true">
 				<batch:chunk commit-interval="1"

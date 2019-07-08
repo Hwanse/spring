@@ -14,7 +14,7 @@
 			USING	DUAL ON(
 				DAILY.PID = #{pid} AND
 				DAILY.CID = #{cid} AND
-				DAILY.DY = #{dt}
+				DAILY.DT = #{dt}
 			)
 			WHEN MATCHED THEN UPDATE SET
 				CNT = #{cnt}

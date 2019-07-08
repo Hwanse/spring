@@ -29,7 +29,7 @@ public class RangerItemReader implements ItemReader<String>{
 	@Override
 	public String read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
 		// null을 리턴하게 되면 더 이상 읽을 데이터가 없다고 판단한다
-		if(index < rangers.size()) {
+		if(index < rangers.size() - 1) {
 			String ranger = rangers.get(index++);
 			logger.debug("reader : {}", ranger);
 			return ranger;

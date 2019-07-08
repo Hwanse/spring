@@ -35,8 +35,11 @@ public class YogultItemProcessor implements ItemProcessor<CycleVO, List<DailyVO>
 		
 		// cal : 20190701
 		cal.setTime(ym_format.parse(ym)); 
+		
 		cal.set(Calendar.DAY_OF_MONTH, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
 		Date ed_dt = cal.getTime();
+		
+		cal.setTime(ym_format.parse(ym));
 		
 		SimpleDateFormat ymd = new SimpleDateFormat("yyyyMMdd");
 		
