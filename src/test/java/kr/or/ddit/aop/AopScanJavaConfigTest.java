@@ -19,7 +19,7 @@ public class AopScanJavaConfigTest {
 
 	private static final Logger logger = LoggerFactory.getLogger(AopScanJavaConfigTest.class);
 	
-	@Resource(name="boardServiceImpl")
+	@Resource(name="boardService")
 	private IBoardService boardService;
 	
 	

@@ -25,7 +25,7 @@ public class SpringIocBeanScanTest {
 	@Resource(name="boardDao")
 	private IBoardDao boardDao;
 	
-	@Resource(name="boardServiceImpl")
+	@Resource(name="boardService")
 	private IBoardService boardService;
 	
 	

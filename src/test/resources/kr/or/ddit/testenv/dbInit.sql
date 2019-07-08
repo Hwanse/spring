@@ -2,6 +2,7 @@ select  *
 from    not_exists_in_prd_db;
 
 --users테이블 초기화
+
 delete users;
 
 delete prod;
