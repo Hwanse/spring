@@ -8,6 +8,7 @@
 	<bean id="tangerTask" class="kr.or.ddit.batch.RangerTesk"/>
 	
 	<task:scheduler id="scheduler"/>
+	
 	<task:scheduled-tasks scheduler="scheduler">
 		<task:scheduled ref="rangerTask" method="rangerTask" cron="*/10 * * * * *"/>
 	</task:scheduled-tasks>
