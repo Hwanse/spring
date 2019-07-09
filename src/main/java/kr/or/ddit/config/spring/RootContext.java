@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 // @Service, @Repository 두 어노테이션을 대상으로 스캔
 
 @ImportResource({"classpath:kr/or/ddit/config/spring/application-scheduler.xml"
-				,"classpath:kr/or/ddit/config/spring/application-batch.xml"})
+				,"classpath:kr/or/ddit/config/spring/application-batch-dev.xml"})
 @Configuration
 @ComponentScan(basePackages = "kr.or.ddit" , useDefaultFilters = false
 			  ,includeFilters = @Filter(type = FilterType.ANNOTATION,

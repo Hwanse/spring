@@ -16,7 +16,7 @@
 	/>
 	
 	<bean id="yogultItemReader" class="org.mybatis.spring.batch.MyBatisCursorItemReader">
-		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
 		<property name="queryId" value="batch.getCycleList"></property>
 		<!-- <property name="parameterValues">
 			<map>
