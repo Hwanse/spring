@@ -13,8 +13,8 @@ import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
 
 @Configuration
-//@PropertySource("classpath:kr/or/ddit/config/mybatis/db_dev.properties")
-@PropertySource("classpath:kr/or/ddit/config/mybatis/db.properties")
+@PropertySource("classpath:kr/or/ddit/config/mybatis/db_dev.properties")
+//@PropertySource("classpath:kr/or/ddit/config/mybatis/db.properties")
 public class ApplicationDatasource_dev {
 	
 	@Autowired

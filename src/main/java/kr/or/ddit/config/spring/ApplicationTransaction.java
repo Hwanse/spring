@@ -17,7 +17,7 @@ public class ApplicationTransaction {
 	private DataSource datasource;
 	
 	@Bean
-	public DataSourceTransactionManager transactionManeger() {
+	public DataSourceTransactionManager transactionManager() {
 		DataSourceTransactionManager dstm = new DataSourceTransactionManager();
 		dstm.setDataSource(datasource);
 		
