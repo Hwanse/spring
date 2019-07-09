@@ -18,6 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import kr.or.ddit.config.ApplicationDatasource_dev;
 import kr.or.ddit.config.spring.ApplicationContext;
 import kr.or.ddit.config.spring.ApplicationDatasource;
 import kr.or.ddit.config.spring.ApplicationTransaction;
@@ -33,7 +34,7 @@ import kr.or.ddit.config.spring.RootContext;
 //applicationContext --> 웹 환경의 applicationContext생성 
 @ContextConfiguration(classes = {ApplicationContext.class,
 								 RootContext.class,
-								 ApplicationDatasource.class,
+								 ApplicationDatasource_dev.class,
 								 ApplicationTransaction.class})
 @WebAppConfiguration
 public class ControllerTestEnv {
