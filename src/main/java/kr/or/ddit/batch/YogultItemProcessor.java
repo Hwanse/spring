@@ -45,13 +45,19 @@ public class YogultItemProcessor implements ItemProcessor<CycleVO, List<DailyVO>
 		
 		List<DailyVO> dailyVoList = new ArrayList<DailyVO>();
 		
+		// cal : 1-31 순차적으로 증가, ed_dt 클때까지
 		while(ed_dt.getTime() >= cal.getTimeInMillis()) {
-			DailyVO vo = new DailyVO();
-			vo.setCid(cycleVO.getCid());
-			vo.setPid(cycleVO.getPid());
-			vo.setDt(ymd.format(cal.getTime()));
-			vo.setCnt(cycleVO.getCnt());
-			dailyVoList.add(vo);
+			// 요일이 같을 때만 dailyVO로 생성
+			// ex: cycleVO.getDay() : 2(월) ==> 20190701, 20190708, 20190715, 20190722, 20190729
+			if(cal.get(Calendar.DAY_OF_WEEK) == cycleVO.getDay()) {
+				DailyVO vo = new DailyVO();
+				vo.setCid(cycleVO.getCid());
+				vo.setPid(cycleVO.getPid());
+				vo.setDt(ymd.format(cal.getTime()));
+				vo.setCnt(cycleVO.getCnt());
+				dailyVoList.add(vo);
+				
+			}
 			
 			cal.add(Calendar.DAY_OF_MONTH, 1);
 		}
