@@ -5,6 +5,8 @@ import javax.annotation.Resource;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
+import kr.or.ddit.batch.model.BatchVO;
+
 @Repository
 public class BatchDao implements IBatchDao{
 
@@ -36,6 +38,24 @@ public class BatchDao implements IBatchDao{
 	@Override
 	public int createDaily(String ym) {
 		return sqlSession.insert("batch.createDaily", ym);
+	}
+
+	/**
+	* Method : insertBatch
+	* 작성자 : PC14
+	* 변경이력 :
+	* @param batchVO
+	* @return
+	* Method 설명 : 배치정보 입력
+	*/
+	@Override
+	public int insertBatch(BatchVO batchVO) {
+		return sqlSession.insert("batch.insertBatch", batchVO);
+	}
+
+	@Override
+	public int updateBatch(BatchVO batchVO) {
+		return sqlSession.update("batch.updateBatch", batchVO);
 	}
 	
 	
