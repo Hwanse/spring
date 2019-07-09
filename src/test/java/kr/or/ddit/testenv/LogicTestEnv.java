@@ -23,7 +23,6 @@ import kr.or.ddit.config.spring.RootContext;
 //	   "classpath:kr/or/ddit/config/spring/application-datasource-dev.xml",
 //	   "classpath:kr/or/ddit/config/spring/application-transaction.xml"})
 @ContextConfiguration(classes = {RootContext.class, ApplicationTransaction.class,
-//									ApplicationDatasource.class,
 									ApplicationDatasource_dev.class
 									} )
 public class LogicTestEnv {
